@@ -1,0 +1,99 @@
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #425b76 100%);
+  color: #ecf0f1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.header-branding {
+  flex: 1;
+}
+
+.header-logo {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3498db;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header-contact {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.header-phone,
+.header-phone a,
+.header-email {
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.header-phone:hover,
+.header-phone a:hover,
+.header-email:hover {
+  color: #3498db;
+}
+
+.navigation {
+  list-style: none;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  gap: 1rem;
+  margin: 0px !important;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.navigation li {
+  display: inline;
+}
+
+.navigation li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.navigation li a {
+  text-decoration: none;
+  padding: 1rem;
+  color: #3498db;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navigation li a:hover {
+  color: #a8aaac;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .header-contact {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .header-phone,
+  .header-email {
+    font-size: 12px;
+  }
+}

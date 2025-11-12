@@ -1,9 +1,7 @@
 <main class="main">
-  <ul class="navigation">
-    <li><a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/counter" routerLinkActive="active">Counter</a></li>
-    <li><a routerLink="/color-picker" routerLinkActive="active">Color Picker</a></li>
-  </ul>
+  <app-header></app-header>
 
+  <router-outlet />
+
+  <app-footer></app-footer>
 </main>
-<router-outlet />

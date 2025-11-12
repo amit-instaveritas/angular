@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="header-top">
+    <div class="header-branding">
+      <h3 class="header-logo">{{ logo }}</h3>
+    </div>
+    <div class="header-contact">
+      <p class="header-phone">Call us: <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a></p>
+      <p class="header-email">Email: {{ emailAddress }}</p>
+    </div>
+  </div>
+  <ul class="navigation">
+    <li *ngFor="let menuItem of menuItems">
+      <a [routerLink]="menuItem.toLowerCase().split(' ').join('-')" routerLinkActive="active">{{ menuItem }}</a>
+    </li>
+  </ul>
+</header>

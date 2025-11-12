@@ -1,10 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import { MenuItem } from '../menu-item/menu-item';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
-  imports: [NgFor, NgIf, MenuItem],
+  imports: [NgFor, NgIf],
   templateUrl: './counter.html',
   styleUrl: './counter.css',
 })

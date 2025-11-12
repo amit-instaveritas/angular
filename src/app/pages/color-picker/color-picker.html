@@ -1,5 +1,5 @@
 <div class="body">
-  <app-menu-item [label]="title"></app-menu-item>
+  <h2>{{ title }}</h2>
 
   <input type="color" (input)="onColorChange($event)" value="{{ selectedColor }}" />
   <button style="margin-left: 10px;" (click)="resetColor()">Reset to Default Color</button>
