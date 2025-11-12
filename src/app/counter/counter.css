@@ -1,0 +1,68 @@
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: white;
+  margin: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.increment-button {
+  color: green;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid green;
+
+}
+
+.decrement-button {
+  color: red;
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid red;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.decrement-button:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.increment-button:hover {
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.remove-button {
+  color: #dc3545;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
