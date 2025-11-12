@@ -1,13 +1,15 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { MenuItem } from '../menu-item/menu-item';
 
 @Component({
   selector: 'app-counter',
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, MenuItem],
   templateUrl: './counter.html',
   styleUrl: './counter.css',
 })
 export class Counter {
+  title = "Counter Component";
 
   number = 0;
 

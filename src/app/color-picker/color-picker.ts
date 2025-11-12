@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
+import { MenuItem } from '../menu-item/menu-item';
 
 @Component({
-  selector: 'app-color-switcher',
-  imports: [],
-  templateUrl: './color-switcher.html',
-  styleUrl: './color-switcher.css',
+  selector: 'app-color-picker',
+  imports: [MenuItem],
+  templateUrl: './color-picker.html',
+  styleUrl: './color-picker.css',
 })
-export class ColorSwitcher {
+export class ColorPicker {
+  title = "Color Picker Component";
   selectedColor: string = '#000000';
 
   onColorChange(event: Event) {
