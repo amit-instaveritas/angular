@@ -6,17 +6,17 @@
 }
 
 .product-header button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #28a745;
+  background-color: #3498db;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .product-header button:hover {
-  background-color: #218838;
+  background-color: #2980b9;
 }
 
 .product {

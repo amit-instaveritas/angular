@@ -47,17 +47,6 @@ p {
   color: var(--gray-700);
 }
 
-main {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0px;
-  box-sizing: inherit;
-  position: relative;
-}
-
 .content {
   width: 100%;
   padding: 1rem 4rem;

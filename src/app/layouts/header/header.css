@@ -51,7 +51,6 @@
   gap: 1rem;
   margin: 0px !important;
   margin-bottom: 1rem;
-  width: 100%;
 }
 
 .navigation li {
@@ -71,6 +70,10 @@
 }
 
 .navigation li a:hover {
+  color: #a8aaac;
+}
+
+.active {
   color: #a8aaac;
 }
 

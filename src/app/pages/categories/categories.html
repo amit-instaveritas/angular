@@ -1,5 +1,9 @@
 <div class="body">
-  <h2>Categories List</h2>
+  <div class="category-header">
+    <h2>Categories List</h2>
+
+    <button>Add Category</button>
+  </div>
 
   <div class="categories">
     <div *ngFor="let item of categories?.data" class="card" [style.background-image]="'url(' + item.image + ')'">

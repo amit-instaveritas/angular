@@ -11,7 +11,6 @@ import { RouterLink } from '@angular/router';
 })
 export class Categories implements OnInit {
   currentPage = 1;
-  errorMessage = '';
   categories: any;
   constructor(private category: Category, private cdr: ChangeDetectorRef) { }
 
@@ -21,7 +20,6 @@ export class Categories implements OnInit {
 
   loadPage(page: number = 1) {
     this.currentPage = page || 1;
-    this.errorMessage = '';
     this.categories = [];
 
     this.category.getCategories(this.currentPage).subscribe({
@@ -31,8 +29,6 @@ export class Categories implements OnInit {
         this.cdr.markForCheck();
       },
       error: (error) => {
-        this.errorMessage = 'Failed to load products. Please try again.';
-
         this.categories = [];
 
         this.cdr.markForCheck();
