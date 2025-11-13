@@ -6,4 +6,20 @@
 
   <p>Default Currency Amount with Code: <b>{{ currencyAmount | currency:'USD' }}</b></p>
   <p>Indian Currency Amount with Code: <b>{{ currencyAmount | currency:'INR' }}</b></p>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat first">
+      <h3>Total Products</h3>
+      <p>{{ productsCount }}</p>
+    </div>
+    <div class="stat second">
+      <h3>Total Categories</h3>
+      <p>{{ categoriesCount }}</p>
+    </div>
+    <div class="stat third">
+      <h3>Stat 3</h3>
+      <p>00</p>
+    </div>
+  </div>
 </div>

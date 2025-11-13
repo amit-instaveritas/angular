@@ -1,0 +1,78 @@
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.profile-header-button {
+  display: flex;
+  gap: 10px;
+}
+
+.profile-header-button .logout {
+  background-color: red;
+}
+
+.profile-header-button .logout:hover {
+  background-color: darkred;
+}
+
+.profile-header button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-header button:hover {
+  background-color: #2980b9;
+}
+
+.profile {
+  display: flex;
+  gap: 30px;
+}
+
+.profile-left, .profile-right {
+  background-color: rgba(255, 255, 255, 0.806);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-left {
+  width: 350px;
+}
+
+.profile-left img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.profile-data {
+  border-top: 1px solid #dcdbdb;
+}
+
+.profile-right {
+  width: 100%;
+}
+
+.profile-info-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.profile-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
