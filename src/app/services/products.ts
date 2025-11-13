@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class Products {
+export class ProductsService {
   constructor(private httpClient: HttpClient) { }
 
-  getProducts() {
-    return this.httpClient.get('http://127.0.0.1:8000/api/products');
+  getProducts(paginate: number) {
+    return this.httpClient.get('http://127.0.0.1:8000/api/products?page=' + paginate);
   }
 }

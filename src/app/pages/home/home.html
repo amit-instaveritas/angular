@@ -6,22 +6,4 @@
 
   <p>Default Currency Amount with Code: <b>{{ currencyAmount | currency:'USD' }}</b></p>
   <p>Indian Currency Amount with Code: <b>{{ currencyAmount | currency:'INR' }}</b></p>
-
-  <h3>Product Lists:</h3>
-  <div class="product">
-    <div *ngFor="let product of products.data" class="product-card">
-      <img [src]="product.image" alt="Product Image">
-      <h3>{{ product.title }}</h3>
-      <h4>Price: {{ product.price | currency:'USD' }}</h4>
-      <p>{{ product.description }}</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="pagination" *ngIf="products.data">
-    <button (click)="loadPage(products.current_page - 1)" [disabled]="products.current_page === 1">Previous</button>
-    <span>Page {{ products.current_page }} of {{ products.total_pages }}</span>
-    <button (click)="loadPage(products.current_page + 1)"
-      [disabled]="products.current_page === products.total_pages">Next</button>
-  </div>
 </div>

@@ -1,0 +1,20 @@
+<div class="body">
+  <h2>Categories List</h2>
+
+  <div class="categories">
+    <div *ngFor="let item of categories?.data" class="card" [style.background-image]="'url(' + item.image + ')'">
+      <a [routerLink]="'/categories/' + item.id">
+        <h3>{{ item.name }}</h3>
+      </a>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination" *ngIf="categories?.data">
+    <button (click)="loadPage(categories.current_page - 1)" [disabled]="categories.current_page === 1"
+      class="prev-button">Prev</button>
+    <span>Page {{ categories.current_page }} of {{ categories.last_page }}</span>
+    <button (click)="loadPage(categories.current_page + 1)"
+      [disabled]="categories.current_page === categories.last_page" class="next-button">Next</button>
+  </div>
+</div>

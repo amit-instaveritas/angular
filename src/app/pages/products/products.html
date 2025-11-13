@@ -1,0 +1,26 @@
+<div class="body">
+  <div class="product-header">
+    <h3>Product Lists:</h3>
+
+    <button>Add Product</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="product" *ngIf="allProducts && allProducts.data">
+    <div *ngFor="let product of allProducts.data" class="product-card">
+      <img [src]="product.image" alt="Product Image">
+      <h2>{{ product.name | titlecase }}</h2>
+      <h4>Price: {{ product.price | currency:'USD' }}</h4>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination" *ngIf="allProducts && allProducts.data">
+    <button (click)="loadPage(allProducts.current_page - 1)" [disabled]="allProducts.current_page === 1"
+      class="prev-button">Prev</button>
+    <span>Page {{ allProducts.current_page }} of {{ allProducts.last_page }}</span>
+    <button (click)="loadPage(allProducts.current_page + 1)"
+      [disabled]="allProducts.current_page === allProducts.last_page" class="next-button">Next</button>
+  </div>
+</div>

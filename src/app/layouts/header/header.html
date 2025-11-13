@@ -7,7 +7,14 @@
       <p class="header-phone">Call us: <a [href]="'tel:' + phoneNumber">{{ phoneNumber }}</a></p>
       <p class="header-email">Email: {{ emailAddress }}</p>
     </div>
+
+    <div class="profile-icon">
+      <a [routerLink]="'profile'" routerLinkActive="active">
+        <img src="images/profile.png" alt="Profile Icon">
+      </a>
+    </div>
   </div>
+
   <ul class="navigation">
     <li *ngFor="let menuItem of menuItems">
       <a [routerLink]="menuItem.toLowerCase().split(' ').join('-')" routerLinkActive="active">{{ menuItem }}</a>
