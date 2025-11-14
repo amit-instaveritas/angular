@@ -10,7 +10,6 @@ import { FormGroupComponent } from '../../components/form-group/form-group';
   declarations: [ProfileComponent],
   imports: [
     CommonModule, FormConsumerComponent, FormGroupComponent
-  ],
-  exports: [ProfileComponent]
+  ]
 })
 export class ProfileModule { }

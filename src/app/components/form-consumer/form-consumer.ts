@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroupService } from '../../services/form-group/form-group';
 import { NameSection, DOBSection, AddressSection } from '../../types/form-group.types';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-form-consumer',
-  imports: [CommonModule],
+  imports: [CommonModule, NgIf],
   templateUrl: './form-consumer.html',
   styleUrls: ['./form-consumer.css']
 })

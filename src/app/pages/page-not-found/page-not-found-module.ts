@@ -8,7 +8,6 @@ import { PageNotFoundComponent } from './page-not-found';
   declarations: [PageNotFoundComponent],
   imports: [
     CommonModule
-  ],
-  exports: [PageNotFoundComponent]
+  ]
 })
 export class PageNotFoundModule { }

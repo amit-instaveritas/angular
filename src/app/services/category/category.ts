@@ -10,4 +10,8 @@ export class CategoryServices {
   getCategories(paginate: number) {
     return this.httpClient.get('http://127.0.0.1:8000/api/categories?page=' + paginate);
   }
+
+  getCategoryById(id: string) {
+    return this.httpClient.get('http://127.0.0.1:8000/api/categories/' + id);
+  }
 }

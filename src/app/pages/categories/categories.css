@@ -69,3 +69,18 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+.category {
+  display: flex;
+  gap: 20px;
+}
+
+.category-left img {
+  width: 200px;
+  height: 200px;
+}
+
+.category-right h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}

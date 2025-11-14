@@ -18,6 +18,7 @@ export const allRoutes: Routes = [
   { path: 'color-picker', component: ColorPickerComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'categories', component: CategoriesComponent },
+  { path: 'categories/:id', component: CategoriesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
