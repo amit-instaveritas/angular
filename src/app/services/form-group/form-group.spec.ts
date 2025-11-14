@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Products } from './products';
+import { FormGroupService } from '../form-group/form-group';
 
-describe('Products', () => {
-  let service: Products;
+describe('FormGroup', () => {
+  let service: FormGroupService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Products);
+    service = TestBed.inject(FormGroupService);
   });
 
   it('should be created', () => {

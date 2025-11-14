@@ -1,14 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'
-import { ProductsService } from '../../services/products';
+import { ProductsService } from '../../services/products/products';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
-export class Products implements OnInit {
+export class ProductsComponent implements OnInit {
   currentPage = 1;
   allProducts: any;
 

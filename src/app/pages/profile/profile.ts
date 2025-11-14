@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { ProfileService } from '../../services/profile';
-import { CommonModule } from '@angular/common';
+import { ProfileService } from '../../services/profile/profile';
 
 @Component({
   selector: 'app-profile',
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
-export class Profile {
+export class ProfileComponent {
   constructor(private profileService: ProfileService) { }
 
   // ngOnInit() {

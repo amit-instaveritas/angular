@@ -1,41 +1,46 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ProductsService } from '../../services/products';
-import { Category } from '../../services/category';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ProductsService } from '../../services/products/products';
+import { CategoryServices } from '../../services/category/category';
 
 @Component({
   selector: 'app-home',
+  standalone: false,
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
-  imports: [CommonModule],
 })
-export class Home {
+export class HomeComponent implements OnInit {
   title = 'Home Component';
   currencyAmount = 1000;
   productsCount = 0;
   categoriesCount = 0;
-  constructor(private productsService: ProductsService, private category: Category) { }
+  constructor(private productsService: ProductsService, private CategoryServices: CategoryServices, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     // Get products count.
     this.productsService.getProducts(1).subscribe({
       next: (data: any) => {
-        console.log(data);
-
         this.productsCount = data.total || 0;
+
+        this.cdr.markForCheck();
       },
       error: (error) => {
         this.productsCount = 0;
+
+        this.cdr.markForCheck();
       }
     });
 
     // Get categories count.
-    this.category.getCategories(1).subscribe({
+    this.CategoryServices.getCategories(1).subscribe({
       next: (data: any) => {
         this.categoriesCount = data.total || 0;
+
+        this.cdr.markForCheck();
       },
       error: (error) => {
         this.categoriesCount = 0;
+
+        this.cdr.markForCheck();
       }
     });
   }

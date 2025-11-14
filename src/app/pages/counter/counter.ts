@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
-  imports: [NgFor, NgIf],
+  standalone: false,
   templateUrl: './counter.html',
   styleUrl: './counter.css',
 })
-export class Counter {
+export class CounterComponent {
   title = "Counter Component";
 
   number = 0;

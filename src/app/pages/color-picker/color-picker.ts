@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-color-picker',
-  imports: [],
+  standalone: false,
   templateUrl: './color-picker.html',
   styleUrl: './color-picker.css',
 })
-export class ColorPicker {
+export class ColorPickerComponent {
   title = "Color Picker Component";
   selectedColor: string = '#000000';
 

@@ -10,7 +10,7 @@ import Module from 'module';
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {
+export class HeaderComponent {
   logo = 'MyApp';
 
   phoneNumber = '123-456-7890';

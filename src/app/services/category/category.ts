@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class Category {
+export class CategoryServices {
   constructor(private httpClient: HttpClient) { }
 
   getCategories(paginate: number) {

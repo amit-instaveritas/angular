@@ -1,18 +1,16 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Category } from '../../services/category';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { CategoryServices } from '../../services/category/category';
 
 @Component({
   selector: 'app-categories',
-  imports: [CommonModule, RouterLink],
+  standalone: false,
   templateUrl: './categories.html',
   styleUrl: './categories.css',
 })
-export class Categories implements OnInit {
+export class CategoriesComponent implements OnInit {
   currentPage = 1;
   categories: any;
-  constructor(private category: Category, private cdr: ChangeDetectorRef) { }
+  constructor(private CategoryServices: CategoryServices, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.loadPage(this.currentPage);
@@ -22,7 +20,7 @@ export class Categories implements OnInit {
     this.currentPage = page || 1;
     this.categories = [];
 
-    this.category.getCategories(this.currentPage).subscribe({
+    this.CategoryServices.getCategories(this.currentPage).subscribe({
       next: (data) => {
         this.categories = data;
 

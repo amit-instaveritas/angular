@@ -1,18 +1,36 @@
-import { Routes } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Counter } from './pages/counter/counter';
-import { ColorPicker } from './pages/color-picker/color-picker';
-import { PageNotFound } from './pages/page-not-found/page-not-found';
-import { Profile } from './pages/profile/profile';
-import { Products } from './pages/products/products';
-import { Categories } from './pages/categories/categories';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home';
+import { CounterComponent } from './pages/counter/counter';
+import { ColorPickerComponent } from './pages/color-picker/color-picker';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found';
+import { ProfileComponent } from './pages/profile/profile';
+import { ProductsComponent } from './pages/products/products';
+import { CategoriesComponent } from './pages/categories/categories';
+import { LoginComponent } from './pages/login/login';
+import { NgModule } from '@angular/core';
+import { RegisterComponent } from './pages/register/register';
+import { authGuard } from './auth/auth-guard';
 
-export const routes: Routes = [
-  { path: 'home', component: Home },
-  { path: 'counter', component: Counter },
-  { path: 'color-picker', component: ColorPicker },
-  { path: 'profile', component: Profile },
-  { path: 'products', component: Products },
-  { path: 'categories', component: Categories },
-  { path: '**', component: PageNotFound }
+export const allRoutes: Routes = [
+  // Unauthenticated routes
+  { path: 'home', component: HomeComponent },
+  { path: 'counter', component: CounterComponent },
+  { path: 'color-picker', component: ColorPickerComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'categories', component: CategoriesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+
+  // Authenticated routes
+  { path: 'profile', canActivate: [authGuard], component: ProfileComponent },
+
+  // Exceptional routessss
+  { path: '**', component: PageNotFoundComponent }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(allRoutes)],
+  exports: [RouterModule],
+})
+
+export class AppRoutes { }
