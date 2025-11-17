@@ -2,7 +2,7 @@
   <h2>{{ title }}</h2>
 
   <input type="color" (input)="onColorChange($event)" value="{{ selectedColor }}" />
-  <button style="margin-left: 10px;" (click)="resetColor()">Reset to Default Color</button>
+  <button (click)="resetColor()">Reset to Default Color</button>
   <hr />
 
   <div [style.background-color]="selectedColor" class="colorBox"></div>

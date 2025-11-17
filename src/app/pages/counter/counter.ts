@@ -16,15 +16,15 @@ export class CounterComponent {
     { value: 1, date: new Date().toLocaleDateString(), time: new Date().toLocaleTimeString() }
   ];
 
-  handle(params: string) {
-    if (params === 'increment') {
-      if (this.number >= 0) {
-        this.number++;
-      }
-    } else if (params === 'decrement') {
-      if (this.number > 0) {
-        this.number--;
-      }
+  increment() {
+    if (this.number >= 0) {
+      this.number++;
+    }
+  }
+
+  decrement() {
+    if (this.number > 0) {
+      this.number--;
     }
   }
 

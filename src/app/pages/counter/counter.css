@@ -43,6 +43,12 @@ button {
   background-color: rgba(0, 128, 0, 0.1);
 }
 
+.table {
+  border-top: 1px solid rgb(85, 85, 85);
+  margin: 20px 0px;
+  padding-top: 10px;
+}
+
 table {
   border-collapse: collapse;
   margin-top: 1rem;

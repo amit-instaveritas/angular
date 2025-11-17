@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BreadcrumbsComponent } from './breadcrumbs';
 import { RouterLink } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [BreadcrumbsComponent],
   imports: [

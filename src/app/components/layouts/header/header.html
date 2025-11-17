@@ -17,7 +17,9 @@
 
   <ul class="navigation">
     <li *ngFor="let menuItem of menuItems">
-      <a [routerLink]="menuItem.toLowerCase().split(' ').join('-')" routerLinkActive="active">{{ menuItem }}</a>
+      <a [routerLink]="menuItem.toLowerCase().split(' ').join('-')" routerLinkActive="active"
+        [appHighlight]="'#3498db40'" [defaultColor]="'#3498db'">{{ menuItem
+        }}</a>
     </li>
   </ul>
 </header>

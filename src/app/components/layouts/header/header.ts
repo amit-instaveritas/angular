@@ -1,12 +1,12 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import Module from 'module';
+import { HighlightDirective } from '../../../directives/highlight';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule, NgFor],
+  imports: [RouterLink, RouterLinkActive, CommonModule, NgFor, HighlightDirective],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
