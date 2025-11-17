@@ -10,7 +10,7 @@
     <div *ngFor="let product of allProducts.data" class="product-card">
       <img [src]="product.image" alt="Product Image">
       <h2>{{ product.name | titlecase }}</h2>
-      <h4>Price: {{ product.price | currency:'USD' }}</h4>
+      <h4>Price : {{ product.price | inrUsd:product.price:'INR' | async }}</h4>
       <p>{{ product.description }}</p>
     </div>
   </div>

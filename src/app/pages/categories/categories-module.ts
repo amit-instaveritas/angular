@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CategoriesComponent } from './categories';
-import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
-
+import { BreadcrumbsModule } from '../../components/breadcrumbs/breadcrumbs-module';
 
 
 @NgModule({
@@ -11,7 +10,7 @@ import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
   imports: [
     CommonModule,
     RouterLink,
-    // BreadcrumbsComponent
+    BreadcrumbsModule
   ],
   exports: [CategoriesComponent]
 })

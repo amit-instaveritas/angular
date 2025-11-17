@@ -1,11 +1,9 @@
 <div class="body">
+  <div class="category-header">
+    <app-breadcrumbs [name]="categoryId ? 'Category - ' + category?.name : 'Categories'"></app-breadcrumbs>
+  </div>
+
   <div *ngIf="! categoryId">
-    <div class="category-header">
-      <app-breadcrumbs [message]="'Categories List'"></app-breadcrumbs>
-
-      <button>Add Category</button>
-    </div>
-
     <div class="categories">
       <div *ngFor="let item of categories?.data" class="card" [style.background-image]="'url(' + item.image + ')'">
         <a [routerLink]="'/categories/' + item.id">
@@ -25,10 +23,6 @@
   </div>
 
   <div *ngIf="categoryId">
-    <div class="category-header">
-      <h2>Category Information</h2>
-    </div>
-
     <div class="category">
       <div class="category-left">
         <img [src]="category?.image" alt="Category Image" />

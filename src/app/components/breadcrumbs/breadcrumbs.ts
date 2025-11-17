@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './breadcrumbs.css',
 })
 export class BreadcrumbsComponent {
-  @Input() message!: string;
+  @Input() name!: string;
 }
