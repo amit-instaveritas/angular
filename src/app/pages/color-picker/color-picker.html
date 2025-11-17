@@ -1,8 +1,10 @@
 <div class="body">
-  <h2>{{ title }}</h2>
+  <h2 class="mt-4">{{ title }}</h2>
 
-  <input type="color" (input)="onColorChange($event)" value="{{ selectedColor }}" />
-  <button (click)="resetColor()">Reset to Default Color</button>
+  <div class="p-2 d-flex gap-3">
+    <input type="color" class="form-control w-50  py-2" (input)="onColorChange($event)" value="{{ selectedColor }}" />
+    <button (click)="resetColor()" class="btn btn-secondary">Reset to Default Color</button>
+  </div>
   <hr />
 
   <div [style.background-color]="selectedColor" class="colorBox"></div>

@@ -1,14 +1,15 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryServices } from '../../services/category/category';
 import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
+import { PaginationComponent } from '../../components/pagination/pagination';
 
 @Component({
   selector: 'app-categories',
   standalone: false,
   templateUrl: './categories.html',
   styleUrl: './categories.css',
-  providers: [CategoryServices, BreadcrumbsComponent]
+  providers: [CategoryServices, BreadcrumbsComponent, PaginationComponent]
 })
 export class CategoriesComponent implements OnInit {
   currentPage = 1;
@@ -16,7 +17,7 @@ export class CategoriesComponent implements OnInit {
   category: any;
   categoryId: string | null = null;
 
-  constructor(private CategoryServices: CategoryServices, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
+  constructor(private CategoryServices: CategoryServices, private router: Router, private route: ActivatedRoute, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -28,6 +29,14 @@ export class CategoriesComponent implements OnInit {
         this.loadPage(this.currentPage);
       }
     });
+  }
+
+  handlePaginationEvent(page: number) {
+    this.loadPage(page);
+  }
+
+  navigateToCategoryCreate() {
+    this.router.navigate(['/categories/create']);
   }
 
   loadPage(page: number = 1) {

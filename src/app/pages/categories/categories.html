@@ -1,6 +1,8 @@
 <div class="body">
   <div class="category-header">
     <app-breadcrumbs [name]="categoryId ? 'Category - ' + category?.name : 'Categories'"></app-breadcrumbs>
+
+    <button class="btn btn-primary" (click)="navigateToCategoryCreate()">Add Category</button>
   </div>
 
   <div *ngIf="! categoryId">
@@ -13,13 +15,7 @@
     </div>
 
     <!-- Pagination -->
-    <div class="pagination" *ngIf="categories?.data">
-      <button (click)="loadPage(categories.current_page - 1)" [disabled]="categories.current_page === 1"
-        class="prev-button">Prev</button>
-      <span>Page {{ categories.current_page }} of {{ categories.last_page }}</span>
-      <button (click)="loadPage(categories.current_page + 1)"
-        [disabled]="categories.current_page === categories.last_page" class="next-button">Next</button>
-    </div>
+    <app-pagination [params]="categories" (paginationEvent)="handlePaginationEvent($event)"></app-pagination>
   </div>
 
   <div *ngIf="categoryId">

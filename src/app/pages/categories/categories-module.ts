@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CategoriesComponent } from './categories';
 import { BreadcrumbsModule } from '../../components/breadcrumbs/breadcrumbs-module';
+import { PaginationModule } from '../../components/pagination/pagination-module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { BreadcrumbsModule } from '../../components/breadcrumbs/breadcrumbs-modu
   imports: [
     CommonModule,
     RouterLink,
-    BreadcrumbsModule
+    BreadcrumbsModule,
+    PaginationModule
   ],
   exports: [CategoriesComponent]
 })

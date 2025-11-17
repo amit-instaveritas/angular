@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login';
 import { NgModule } from '@angular/core';
 import { RegisterComponent } from './pages/register/register';
 import { authGuard } from './auth/auth-guard';
+import { CategoryCreateComponent } from './pages/categories/category-create/category-create';
 
 export const allRoutes: Routes = [
   // Unauthenticated routes
@@ -18,6 +19,7 @@ export const allRoutes: Routes = [
   { path: 'color-picker', component: ColorPickerComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'categories', component: CategoriesComponent },
+  { path: 'categories/create', component: CategoryCreateComponent },
   { path: 'categories/:id', component: CategoriesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

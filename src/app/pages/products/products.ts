@@ -1,12 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core'
 import { ProductsService } from '../../services/products/products';
 import { CommonModule } from '@angular/common';
+import { PaginationComponent } from '../../components/pagination/pagination';
 
 @Component({
   selector: 'app-products',
   standalone: false,
   templateUrl: './products.html',
   styleUrl: './products.css',
+  providers: [ProductsService, PaginationComponent],
 })
 export class ProductsComponent implements OnInit {
   currentPage = 1;
@@ -16,6 +18,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
     this.loadPage(this.currentPage);
+  }
+
+  handlePaginationEvent(page: number) {
+    this.loadPage(page);
   }
 
   loadPage(page: number = 1) {

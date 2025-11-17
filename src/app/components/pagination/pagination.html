@@ -1,0 +1,7 @@
+<div class="pagination" *ngIf="params?.data">
+  <button (click)="loadPage(params.current_page - 1)" [disabled]="params.current_page === 1" class="prev-button"
+    [ngClass]="params.prev_page_url ? 'disabled' : ''">Prev</button>
+  <span>Page {{ params.current_page }} of {{ params.last_page }}</span>
+  <button (click)="loadPage(params.current_page + 1)" [disabled]="params.current_page === params.last_page"
+    class="next-button">Next</button>
+</div>

@@ -1,11 +1,11 @@
 <div class="body">
-  <h2>{{ title }}</h2>
+  <h2 class="mt-4">{{ title }}</h2>
   <div class="counter">
-    <button (click)="decrement()" class="decrement-button">-</button>
+    <button (click)="decrement()" class="btn btn-outline-danger px-4 py-3 fw-bold">-</button>
     <h2>{{ number }}</h2>
-    <button (click)="increment()" class="increment-button">+</button>
+    <button (click)="increment()" class="btn btn-outline-success px-4 py-3 fw-bold">+</button>
     <div>
-      <button (click)="addNumber()" class="save-button">Add</button>
+      <button (click)="addNumber()" class="btn btn-primary py-2 px-4">Add</button>
     </div>
   </div>
 
@@ -26,7 +26,7 @@
           <td>{{ savedNumber.value }}</td>
           <td>{{ savedNumber.date }}</td>
           <td>{{ savedNumber.time }}</td>
-          <td><button class="remove-button" (click)="removeNumber(savedNumber)">Remove</button></td>
+          <td><button class="btn btn-danger" (click)="removeNumber(savedNumber)">Remove</button></td>
         </tr>
 
         <tr *ngIf="savedNumbers.length === 0">

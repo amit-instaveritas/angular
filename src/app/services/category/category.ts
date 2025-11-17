@@ -14,4 +14,13 @@ export class CategoryServices {
   getCategoryById(id: string) {
     return this.httpClient.get('http://127.0.0.1:8000/api/categories/' + id);
   }
+
+  loadPage(page: number) {
+    return this.httpClient.get('http://127.0.0.1:8000/api/categories?page=' + page);
+  }
+
+  loadSingleCategory(id: string) {
+    return this.httpClient.get('http://127.0.0.1:8000/api/categories/' + id);
+  }
+
 }

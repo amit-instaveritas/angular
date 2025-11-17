@@ -75,16 +75,20 @@ export class FormGroupService {
     formData.append('username', username || '');
     formData.append('password', password || '');
 
-    return this.http.post('http://127.0.0.1:8000/login', formData);
+    return this.http.post('http://127.0.0.1:8000/api/login', formData);
   }
 
-  register(): Observable<any> {
-    const { username, password } = this.formDataSubject.value as any;
+  register(csrf: any): Observable<any> {
+    const { name, email, password, confirmPassword } = this.formDataSubject.value as any;
 
     const formData = new FormData();
-    formData.append('username', username || '');
+    formData.append('name', name || '');
+    formData.append('email', email || '');
     formData.append('password', password || '');
+    formData.append('password_confirmation', confirmPassword || '');
 
-    return this.http.post('http://127.0.0.1:8000/register', formData);
+    console.log(formData);
+
+    return this.http.post('http://127.0.0.1:8000/api/register', formData, { headers: { 'X-CSRF-TOKEN': typeof csrf === 'object' ? csrf.token : csrf } });
   }
 }
