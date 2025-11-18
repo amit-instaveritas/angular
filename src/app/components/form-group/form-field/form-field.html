@@ -1,0 +1,27 @@
+<div class="mb-3">
+
+  <!-- Text / Email / Password / Number -->
+  <div class="form-floating">
+    <input *ngIf="type !== 'select' && type !== 'textarea'" [type]="type"
+      [class]="control.invalid && control.touched ? 'invalid-error form-control' : 'form-control'" id="floatingInput"
+      [placeholder]="placeholder" [formControl]="control">
+    <label for="floatingInput">{{ label }}</label>
+  </div>
+
+  <!-- Select -->
+  <select *ngIf="type === 'select'" class="form-select" [formControl]="control">
+    <option value="">Select {{ label }}</option>
+    <option *ngFor="let opt of options" [value]="opt.value">
+      {{ opt.label }}
+    </option>
+  </select>
+
+  <!-- Textarea -->
+  <textarea *ngIf="type === 'textarea'" class="form-control" rows="3" [placeholder]="placeholder"
+    [formControl]="control"></textarea>
+
+  <!-- Error message -->
+  <div class="text-danger mt-1" *ngIf="control.invalid && control.touched">
+    {{ label }} is invalid
+  </div>
+</div>

@@ -5,7 +5,7 @@
     <div class="profile-header-button">
       <button>Edit Profile</button>
 
-      <button class="logout">Logout</button>
+      <button (click)="logout()">Logout</button>
     </div>
   </div>
 
@@ -14,10 +14,9 @@
       <img src="images/profile.png" alt="Profile Picture" />
 
       <div class="profile-data">
-        <h3>John Doe</h3>
-        <p>2l8Ug@example.com</p>
-        <p>Member since: January 2023</p>
-        <p>+91 1234567890</p>
+        <h3>{{ profileData?.name }}</h3>
+        <p>{{ profileData?.email }}</p>
+        <p>Member since: {{ profileData?.created_at }}</p>
       </div>
     </div>
 

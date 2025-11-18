@@ -14,18 +14,19 @@ import { CategoryCreateComponent } from './pages/categories/category-create/cate
 
 export const allRoutes: Routes = [
   // Unauthenticated routes
-  { path: 'home', component: HomeComponent },
-  { path: 'counter', component: CounterComponent },
-  { path: 'color-picker', component: ColorPickerComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'categories', component: CategoriesComponent },
-  { path: 'categories/create', component: CategoryCreateComponent },
-  { path: 'categories/:id', component: CategoriesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
   // Authenticated routes
-  { path: 'profile', canActivate: [authGuard], component: ProfileComponent },
+  { path: 'home', canActivate: [authGuard], component: HomeComponent },
+  { path: 'counter', canActivate: [authGuard], component: CounterComponent },
+  { path: 'color-picker', canActivate: [authGuard], component: ColorPickerComponent },
+  { path: 'products', canActivate: [authGuard], component: ProductsComponent },
+  { path: 'categories', canActivate: [authGuard], component: CategoriesComponent },
+  { path: 'categories/create', canActivate: [authGuard], component: CategoryCreateComponent },
+  { path: 'categories/:id', canActivate: [authGuard], component: CategoriesComponent },
+  { path: 'profile/:id', canActivate: [authGuard], component: ProfileComponent },
+  { path: 'logout', canActivate: [authGuard], component: LoginComponent },
 
   // Exceptional routessss
   { path: '**', component: PageNotFoundComponent }

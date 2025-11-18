@@ -60,8 +60,6 @@ export class CategoriesComponent implements OnInit {
   loadSingleCategory(id: string) {
     this.CategoryServices.getCategoryById(id).subscribe({
       next: (data) => {
-        console.log(this.category);
-
         this.category = data;
         this.cdr.markForCheck();
       },

@@ -3,7 +3,8 @@ import { provideRouter } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { allRoutes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,7 +12,11 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(allRoutes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(),
+
+    provideHttpClient(
+      withInterceptors([TokenInterceptor])
+    ),
+
     ReactiveFormsModule
   ]
 };

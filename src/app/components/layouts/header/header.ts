@@ -2,6 +2,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { HighlightDirective } from '../../../directives/highlight';
+import { AuthService } from '../../../services/auth/auth';
 
 @Component({
   selector: 'app-header',
@@ -17,4 +18,12 @@ export class HeaderComponent {
   emailAddress = 'amitkumarkesharwani98@instaveritas.com';
 
   menuItems: string[] = ['Home', 'Counter', 'Color Picker', 'Products', 'Categories'];
+
+  userId: number | null = null;
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+    this.userId = this.authService.getUserId();
+  }
 }
